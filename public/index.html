@@ -22,54 +22,40 @@
                 <div class="uppercase text-gray-200 p-5 text-sm font-bold">Pages</div>
             </div>
             <div class="flex m-5 mt-2">
-                <div>
-                    <img class="w-6 h-6" src="./images/dashboard.png" alt="Dashboard">
-                </div>
+                <div><img class="w-6 h-6" src="./images/dashboard.png" alt="Dashboard"></div>
                 <div class="mx-3 text-gray-100">Dashboard</div>
             </div>
             <div class="flex m-5 mt-2">
-                <div>
-                    <img class="w-6 h-6" src="./images/customers.png" alt="Dashboard">
-                </div>
+                <div><img class="w-6 h-6" src="./images/customers.png" alt="Customers"></div>
                 <div class="mx-3 text-gray-100">Customers</div>
             </div>
             <div class="flex m-5 mt-2">
-                <div>
-                    <img class="w-6 h-6" src="./images/orders.png" alt="Dashboard">
-                </div>
+                <div><img class="w-6 h-6" src="./images/orders.png" alt="Orders"></div>
                 <div class="mx-3 text-gray-100">Orders</div>
             </div>
             <div class="flex m-5 mt-2">
-                <div>
-                    <img class="w-6 h-6" src="./images/campaign.png" alt="Dashboard">
-                </div>
+                <div><img class="w-6 h-6" src="./images/campaign.png" alt="Campaigns"></div>
                 <div class="mx-3 text-gray-100">Campaigns</div>
             </div>
             <div class="flex m-5 mt-2">
-                <div>
-                    <img class="w-6 h-6" src="./images/messages.png" alt="Dashboard">
-                </div>
+                <div><img class="w-6 h-6" src="./images/messages.png" alt="Messages"></div>
                 <div class="mx-3 text-gray-100">Messages</div>
             </div>
             <div class="flex m-5 mt-2">
-                <div>
-                    <img class="w-6 h-6" src="./images/apps.png" alt="Dashboard">
-                </div>
+                <div><img class="w-6 h-6" src="./images/apps.png" alt="Apps"></div>
                 <div class="mx-3 text-gray-100">Apps</div>
             </div>
             <div class="flex m-5 mt-2">
-                <div>
-                    <img class="w-6 h-6" src="./images/settings.png" alt="Dashboard">
-                </div>
+                <div><img class="w-6 h-6" src="./images/settings.png" alt="Settings"></div>
                 <div class="mx-3 text-gray-100">Settings</div>
             </div>
         </div>
 
         <!-- Main area -->
         <div class="flex-1">
-            <div>
 
-                <!-- Heading area -->
+            <!-- Heading area -->
+            <div>
                 <div class="bg-white px-2 py-0.5 h-18 flex items-center">
                     <div class="left md:w-3/4 sm:w-1/3 flex items-center p-3">
                         <img class="w-10 h-10" src="./images/person.png" alt="Person">
@@ -82,12 +68,76 @@
                         <a href="" class="mx-2 text-indigo-500 font-semibold">Logout</a>
                     </div>
                 </div>
+            </div>
 
-                <!-- Banner area -->
-                
+            <!-- Banner area -->
+            <div class="bg-indigo-200 m-7 p-6">
+                <div class="text-4xl text-gray-800 font-medium">Good Afternoon, Super Inc. </div>
+                <div class="mt-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+            </div>
+
+            <!--  -->
+            <div class="card-container flex m-7 space-x-6">
+                <div class="card w-1/2 bg-white p-4">
+                    <div><img class="w-10 h-10" src="./images/wallet.png" alt="wallet"></div>
+                    <div class="text-xl font-bold text-gray-700">Super Plus</div>
+                    <div class="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">Sales</div>
+                    <span class="font-bold text-3xl">$24,567</span>
+                    <span class="bg-green-500 text-white p-1 rounded-full text-sm font-bold align-text-top">+56%</span>
+
+                    <!-- Chat js -->
+                    <canvas id="chartLeft"></canvas>
+                </div>
+                <div class="card w-1/2 bg-white p-4">
+                    <div><img class="w-10 h-10" src="./images/wallet.png" alt="wallet"></div>
+                    <div class="text-xl font-bold text-gray-700">Super Pro</div>
+                    <div class="uppercase mt-3 mb-3 font-bold text-sm text-gray-400">Sales</div>
+                    <span class="font-bold text-3xl">$14,567</span>
+                    <span class="bg-red-500 text-white p-1 rounded-full text-sm font-bold align-text-top">-13%</span>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
+    <script>
+        var ctx = document.getElementById('chartLeft').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Fab', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Number of sales',
+                    data: [7, 17, 13, 9, 6, 10],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
